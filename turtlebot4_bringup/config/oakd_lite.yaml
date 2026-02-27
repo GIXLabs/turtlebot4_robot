@@ -1,36 +1,32 @@
 /oakd:
   ros__parameters:
     camera:
+      i_enable_rgb: false
       i_enable_ir: true
       i_nn_type: none
-      i_pipeline_type: 'Depth'
+      i_pipeline_type: 'Stereo'
       i_usb_speed: SUPER_PLUS
-      i_enable_rgbd: true
       i_tf_camera_model: 'OAK-D-LITE'
       i_tf_camera_name: 'oak'
       i_tf_parent_frame: 'oak-d-base-frame'
     pipeline_gen:
       i_enable_imu: false
+      i_enable_diagnostics: false
     left:
-      i_low_bandwidth: true
-      i_resolution: 480P
-      i_fps: 15.0
+      i_publish_topic: false
     right:
-      i_low_bandwidth: true
-      i_resolution: 480P
-      i_fps: 15.0
       i_publish_topic: true
+      i_low_bandwidth: true
+      i_low_bandwidth_quality: 25
+      i_publish_compressed: true
+      i_resolution: '480P'
+      i_width: 320
+      i_height: 240
+      i_fps: 5.0
+      i_max_q_size: 4
     stereo:
-      i_width: 640
-      i_height: 480
-      i_subpixel: false
-      i_lr_check: false
-      i_align_depth: true
-      i_output_disparity: false
-      i_output_depth: true
-      i_depth_preset: HIGH_ACCURACY
-      i_low_bandwidth: true
-      i_publish_topic: true
-      i_fps: 15.0
-      i_board_socket_id: 2
+      i_publish_topic: false
+    rgb:
+      i_enable_preview: false
+      i_publish_topic: false
     use_sim_time: false
