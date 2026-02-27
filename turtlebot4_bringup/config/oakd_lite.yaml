@@ -1,7 +1,6 @@
 /oakd:
   ros__parameters:
     camera:
-      i_enable_rgb: false
       i_enable_ir: true
       i_nn_type: none
       i_pipeline_type: 'Stereo'
@@ -25,8 +24,5 @@
       i_fps: 5.0
       i_max_q_size: 4
     stereo:
-      i_publish_topic: false
-    rgb:
-      i_enable_preview: false
       i_publish_topic: false
     use_sim_time: false
